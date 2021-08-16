@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route eaxct path="/graph" component={Graph} />
+      <Route exact path="/graph" component={Graph} />
       <Route exact path="/alert" component={Alert} />
       <Route exact path="/info" component={Info} />
     </div>
