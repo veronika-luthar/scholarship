@@ -16,3 +16,7 @@ nav ul {
   list-style-type:  none;
   color: blue;
 }
+
+nav ul li a {
+  text-decoration: none;
+}
