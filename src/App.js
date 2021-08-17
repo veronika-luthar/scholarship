@@ -5,7 +5,7 @@ import Graph from './Graph';
 import Info from './Info';
 import Alert from './Alert';
 import {Route, Link} from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
