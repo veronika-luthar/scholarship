@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
-import Graph from './Graph';
-import Info from './Info';
-import Alert from './Alert';
+import Home from './Pages/Home';
+import Graph from './Pages/Graph';
+import Info from './Pages/Info';
+import Alert from './Pages/Alert';
 import {Route, Link} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 
