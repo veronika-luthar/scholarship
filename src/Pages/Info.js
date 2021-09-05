@@ -4,7 +4,7 @@ import React from "react";
 function Info() {
     return (
         <div>
-            <h1>Info</h1>
+          {/*   <h1>Info</h1>*/}
         </div>
     )
 }

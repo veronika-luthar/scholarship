@@ -6,17 +6,12 @@ const Navbar = () => {
         <nav>
             <h1 class="header">Water-Supply <br/>Testing Results <br/>Dunedin</h1>
             <ul>
-                <button class="button">
-                    <a>
-                        <Link to='/'>Home</Link>
-                    </a>
-                </button>
-                
-                <button class="button">
-                    <li>
-                        <Link to='/graph'>Graph</Link>
-                    </li>
-                </button>
+                <li>
+                    <Link to='/'>Home</Link>
+                </li>
+                <li>
+                    <Link to='/graph'>Graph</Link>
+                </li>
                 <li>
                     <Link to='/alert'>Alert</Link>
                 </li>
