@@ -62,3 +62,7 @@ a:hover {
   color: #FFF4E9;
   margin: 5%;
 }
+
+.image {
+  z-index: 1;
+}
