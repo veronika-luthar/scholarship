@@ -6,7 +6,7 @@ import Info from './Pages/Info';
 import Alert from './Pages/Alert';
 import {Route, Link} from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Header from './Components/Content';
+import Header from './Components/Header';
 
 function App() {
   return (

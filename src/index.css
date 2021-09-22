@@ -83,3 +83,8 @@ a:hover {
   width: 100vw;
   height: 30vh;
 }
+
+.page-body {
+  width: 100vw;
+  height: 80%;
+}
