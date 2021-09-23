@@ -84,7 +84,9 @@ a:hover {
   height: 30vh;
 }
 
-.page-body {
+.page-content {
+  position: absolute;
   width: 100vw;
-  height: 80%;
+  height: 70vh;
+  bottom: 0;
 }

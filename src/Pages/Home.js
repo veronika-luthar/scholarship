@@ -3,8 +3,10 @@ import React from "react";
 
 function Home() {
     return (
-        <div class='test'>
-          {/*   <h1>Welcome to my website</h1>*/}
+        <div class='parent'>
+          <div class='page-content'>
+            {<h1> Search Bar </h1>}
+          </div>
         </div>
     )
 }
