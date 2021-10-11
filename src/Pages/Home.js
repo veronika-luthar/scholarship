@@ -1,14 +1,14 @@
 import { getByDisplayValue } from "@testing-library/dom";
 import React from "react";
 
-function Home() {
+function Home(props) {
     return (
-        <div class='parent'>
-          <div class='page-content' id="pageContent">
-            {<h1> Search Bar </h1>}
+
+          <div>
+              {<h1> Search Bar </h1>}
+              {props.children}
           </div>
-          <div class='map' id="map"></div>
-        </div>
+
     )
 }
 

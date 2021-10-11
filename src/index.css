@@ -1,10 +1,65 @@
 @import url('https://fonts.googleapis.com/css?family=Staatliches');
 
+:root {
+  --body-background: #22333B;
+
+  --link-color: #FFF4E9;
+  --navback-color: #254472;
+  
+  --phone-link-color: black;
+  --phone-hover-link-color: yellow;
+}
+
+
+
+#root {
+	display: table;
+	width: 100%;
+}
+
+.App {
+	display:table-row;
+	height: 100vh;
+}
+
+.nav {
+	display: table-cell;
+	width: 15%;
+  background-color: var(--navback-color);
+  vertical-align:top;
+}
+
+.parent {
+	display: table-cell;
+	
+}
+
+.container {
+	background: url('./images/water.jpg') no-repeat left center;
+	background-size:200% 200%;
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+html {
+width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
+  border: 0;
+
   font-family: Staatliches, regular;
-  background-color: #22333B;
+  background-color: var(--body-background);
+  overflow-y: scroll;
 }
 
 code {
@@ -13,12 +68,9 @@ code {
 }
 
 nav {
-  display: inline-block;
-  height: 100%;
-  width: 20%;
-  background-color: #254472;
   text-align: left;
-  position: fixed;
+  position: sticky !important;
+	top:1em !important;
 }
 
 nav ul {
@@ -27,66 +79,65 @@ nav ul {
   padding-right: 10%;
 }
 
-a {
-  font-size: 32px;
-  display: inline-block;
-  text-decoration: none;
-  border-color: #FFF4E9;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 5px;
-  background-color: transparent;
-  color: #FFF4E9;
-  font-family: Staatliches;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  height: 40px;
-  width: 100%;
-  text-align: center;
-  
-  transition-duration: 350ms;
-}
-
-a:visited {
-  color: #FFF4E9;
-}
-
-a:hover {
-  background-color: #FFF4E9;
-  color: #22333B;
-  transition-duration: 350ms;
+li {
+  display: inline;
 }
 
 .logo-text {
   font-family: Staatliches;
-  font-size: 38px;
-  color: #FFF4E9;
-  margin: 5%;
+	padding: 0 5%;
+	margin: 0;
+	font-size: 2.5em;
 }
 
 .image {
+  max-width:100%;
   z-index: 1;
+  height: 20vh;
   width: 100vw;
-  height: 25vh;
 }
 
-.parent {
-  display: block;
-  position: fixed;
-  right: 0;
-  height: 100%;
-  width: 80%;
+.map {
+  max-width:100%;
+}
+
+a {
+  text-decoration: none;
+  border-style: solid;
+  background-color: transparent;
+  font-family: Staatliches;
+  text-align: center;
+  transition-duration: 350ms;
+	font-size: 1.9em;
+	display: inline-block;
+	border-width: 3px;
+	border-radius: 5px;
+	color: var(--link-color);
+	border-color: var(--link-color);
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+a:visited {
+	color: var(--link-color);
+}
+
+a:hover {
+	background-color: var(--link-color);
+	color: var(--navback-color);
+  transition-duration: 350ms;
 }
 
 .header {
   z-index: 1;
-  width: 100vw;
-  height: 30vh;
+  max-height: 150px;
+  height: 20vh;
+  width: 100%;
+  overflow-y: hidden;
 }
 
 .page-content {
-  position: absolute;
-  width: 100vw;
-  height: 70vh;
-  bottom: 0;
+  padding: 0 1em;
 }

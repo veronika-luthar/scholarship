@@ -2,28 +2,19 @@ import React from 'react';
 import worldMap from '../images/worldMap.svg';
 //import ReactDOM from 'react-dom';
 
-const Graph = () => {
-    
-  //  imageClick = () => {
-  //      console.log("click");
- //   }
-    
- const message = () => {
-    
-    console.log('Click');
-   }
-   
-   return (
-       <div class='parent'>
-           <div class='header'/>
-        <div class='map'>
-        
-        <img src = {worldMap} onClick={message}  style={{"pointer-events": "all"}}></img>
-        </div>
-        </div>
-     );
-    }
+    const Graph = () => {
 
+        const imageClick = () => {
+            console.log("click");
+        }
+     
+        return (
+             <div className='map'>
+             <img className='map' src = {worldMap} onClick={imageClick}></img>
+             </div>
+          );
+         }
+     
 //ReactDOM.render(<Graph />, document.getElementById('pageContent'));
 export default Graph;
 

@@ -11,18 +11,25 @@ import Graph from './Components/Graph';
 
 function App() {
   return (
+
+
     <div className="App">
-      <Navbar />
-      <Header>
-      
-      </Header>
-      <Route exact path="/" component={Home} >
-      <Graph />
-        </Route>
-      <Route exact path="/graph" component={GraphPage} />
-      <Route exact path="/alert" component={Alert} />
-      <Route exact path="/info" component={Info} />
+        <Navbar />
+        <div className="parent">
+          <Header />
+          <div className="page-content">
+            <Route exact path="/">
+              <Home>
+                <Graph/>
+              </Home>
+            </Route>
+            <Route exact path="/graph" component={GraphPage} />
+            <Route exact path="/alert" component={Alert} />
+            <Route exact path="/info" component={Info} />
+          </div>
+        </div>
     </div>
+
   );
 }
 

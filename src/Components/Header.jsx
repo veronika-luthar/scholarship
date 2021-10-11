@@ -3,11 +3,11 @@ import water from '../images/water.jpg'
 
 const Header = () => {
     return (
-        <div class='parent'>
-            <div class='header'>
+
+            <div className='header'>
                 <img src= {water} alt="water image" class="image"/>
             </div>
-        </div>
+
     )
 }
 
