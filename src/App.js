@@ -8,6 +8,7 @@ import {Route, Link} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Header from './Components/Header';
 import Map from './Components/Map';
+import Graph from './Components/Graph';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/graph" component={GraphPage} />
             <Route exact path="/alert" component={Alert} />
             <Route exact path="/info" component={Info} />
+            <Route exact path={["/SA", "/NA", "/ME"]}  component={Graph} />
           </div>
         </div>
     </div>
