@@ -7,7 +7,7 @@ import Alert from './Pages/Alert';
 import {Route, Link} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Header from './Components/Header';
-import Graph from './Components/Graph';
+import Map from './Components/Map';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <div className="page-content">
             <Route exact path="/">
               <Home>
-                <Graph/>
+                <Map/>
               </Home>
             </Route>
             <Route exact path="/graph" component={GraphPage} />
