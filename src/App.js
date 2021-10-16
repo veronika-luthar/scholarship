@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/graph" component={GraphPage} />
             <Route exact path="/alert" component={Alert} />
             <Route exact path="/info" component={Info} />
-            <Route exact path={["/SA", "/NA", "/ME"]}  component={Graph} />
+            <Route exact path={["/SA", "/NA", "/ME", "/AF", "/AS", "/EU", "/AU", "/NZ"]}  component={Graph} />
           </div>
         </div>
     </div>
