@@ -4,23 +4,30 @@ const Graph = () => {
     const url = window.location.href.split('/').pop();
   //  const areas = ["SA", "NA", "ME", "AF", "AS", "EU", "AU", "NZ"];
    
+  let dataGraph;
+
   switch(url) {
     case "SA":
-        console.log("South America");
+        dataGraph = <h1>South America</h1>
         break;
     case "NA":
-        console.log("North America");
+        dataGraph = <h1>North America</h1>
         break;
     case "EU":
-        console.log("Europe");
+        dataGraph = <h1>Europe</h1>
         break;
     case "ME":
-        console.log("Middle East");
+        dataGraph = <h1>Middle East</h1>
+        break;
+    case "AU":
+        dataGraph = <h1>Australia</h1>
         break;  
-
+    case "AS":
+        dataGraph = <h1>Asia</h1>
+        break;  
     }
 
-    return (  )
+    return ( dataGraph )
 }
 
 export default Graph;
