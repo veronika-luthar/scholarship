@@ -9,11 +9,11 @@ import Navbar from './Components/Navbar';
 import Header from './Components/Header';
 import Map from './Components/Map';
 import Graph from './Components/Graph';
+import Chart from './Components/Chart';
 
 function App() {
+
   return (
-
-
     <div className="App">
         <Navbar />
         <div className="parent">
