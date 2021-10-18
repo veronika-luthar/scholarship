@@ -1,17 +1,18 @@
 import React from "react";
+import { Bar } from "react-chartjs-2";
 
 const Graph = () => {
     const url = window.location.href.split('/').pop();
   //  const areas = ["SA", "NA", "ME", "AF", "AS", "EU", "AU", "NZ"];
    
-  let dataGraph;
+  let dataGraph = [];
 
   switch(url) {
     case "SA":
-        dataGraph = <h1>South America</h1>
+        dataGraph = [1, 2, 4, 8, 2]
         break;
     case "NA":
-        dataGraph = <h1>North America</h1>
+        dataGraph = [4, 9, 2, 3, 1]
         break;
     case "EU":
         dataGraph = <h1>Europe</h1>
@@ -27,7 +28,27 @@ const Graph = () => {
         break;  
     }
 
-    return ( dataGraph )
+    const chartData = {
+        labels: ["a", "b", "c", "d", "h"], 
+        datasets: [{
+          label: "bob",
+          data: dataGraph,
+          backgroundColor: 'rgba(255,255,255,1)'
+        }]
+      };
+
+    return ( <div>
+        <Bar 
+        data={chartData}
+        options={{
+          plugins: {
+            title: {
+              display: true,
+              text: "Water Data"
+            },
+          }
+        }} />
+      </div> )
 }
 
 export default Graph;
