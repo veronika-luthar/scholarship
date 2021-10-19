@@ -15,17 +15,33 @@ const Graph = () => {
         dataGraph = [4, 9, 2, 3, 1]
         break;
     case "EU":
-        dataGraph = <h1>Europe</h1>
+        dataGraph = [3, 5, 9, 1, 1]
         break;
     case "ME":
-        dataGraph = <h1>Middle East</h1>
+        dataGraph = [8, 8, 2, 3, 3]
         break;
     case "AU":
-        dataGraph = <h1>Australia</h1>
+        dataGraph = [1, 2, 2, 1, 0]
         break;  
     case "AS":
-        dataGraph = <h1>Asia</h1>
-        break;  
+        dataGraph = [8, 7, 7, 9, 3]
+        break; 
+    case "AF":
+        dataGraph = [0, 1, 2, 1, 7]
+        break;
+    }
+
+    let barColor = [];
+    for(let i = 0; i < dataGraph.length; i++){
+      if(dataGraph[i] > 3 && dataGraph[i] < 5 ){
+        barColor.push('rgba(255,255,0,1)');
+      }
+      else if(dataGraph[i] > 5){
+        barColor.push('rgba(255,0,0,1)');
+      }
+      else {
+        barColor.push('rgba(0,255,0,1)');
+      }
     }
 
     const chartData = {
@@ -33,7 +49,7 @@ const Graph = () => {
         datasets: [{
           label: "bob",
           data: dataGraph,
-          backgroundColor: 'rgba(255,255,255,1)'
+          backgroundColor: barColor
         }]
       };
 
