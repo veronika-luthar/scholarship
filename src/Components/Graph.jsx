@@ -12,10 +12,10 @@ const Graph = () => {
         dataGraph = [1, 2, 4, 8, 2]
         break;
     case "NA":
-        dataGraph = [4, 9, 2, 3, 1]
+        dataGraph = [[4, 9, 2, 3, 1],["s","s","s","s","s",]]
         break;
     case "EU":
-        dataGraph = [3, 5, 9, 1, 1]
+        dataGraph = [{name: "helo", data: 3}, 5, 9, 1, 1]
         break;
     case "ME":
         dataGraph = [8, 8, 2, 3, 3]
@@ -34,21 +34,21 @@ const Graph = () => {
     let barColor = [];
     for(let i = 0; i < dataGraph.length; i++){
       if(dataGraph[i] > 3 && dataGraph[i] < 5 ){
-        barColor.push('rgba(255,255,0,1)');
+        barColor.push('rgba(253,253,150,1)');
       }
       else if(dataGraph[i] > 5){
-        barColor.push('rgba(255,0,0,1)');
+        barColor.push('rgba(255,105,97,1)');
       }
       else {
-        barColor.push('rgba(0,255,0,1)');
+        barColor.push('rgba(119,221,119,1)');
       }
     }
 
     const chartData = {
-        labels: ["a", "b", "c", "d", "h"], 
+        labels: dataGraph[1], 
         datasets: [{
           label: "bob",
-          data: dataGraph,
+          data: dataGraph[0],
           backgroundColor: barColor
         }]
       };
