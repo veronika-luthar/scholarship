@@ -57,12 +57,18 @@ const Graph = () => {
         <Bar 
         data={chartData}
         options={{
-          plugins: {
-            title: {
-              display: true,
-              text: "Water Data"
-            },
+        //  plugins: {
+          //  title: {
+           //   display: true,
+          //    text: "Water Data"
+          //  },
+         // },
+         scales: {
+          y: {
+              suggestedMin: 0,
+              suggestedMax: 10
           }
+        }
         }} />
       </div> )
 }
