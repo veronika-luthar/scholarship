@@ -50,9 +50,16 @@ const Graph = () => {
           }
           break;
       }
-
+    
+    // let test = dataGraph.data.filter(result => result.length > 1);
+    // console.log(test);
     let barColor = [];
-    for(let i = 0; i < dataGraph.data.length; i++){
+    for(let i = 0; i < dataGraph.data.length; ){
+      if(dataGraph.data[i] <= 1){
+        dataGraph.labels.splice([i], 1);
+        dataGraph.data.splice([i], 1);
+        continue;
+      }
       if(dataGraph.data[i] > 3 && dataGraph.data[i] < 5 ){
         barColor.push('rgba(253,253,150,1)');
       }
@@ -62,6 +69,7 @@ const Graph = () => {
       else {
         barColor.push('rgba(119,221,119,1)');
       }
+      i++;
     }
 
     const chartData = {
