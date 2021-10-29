@@ -3,35 +3,35 @@ import { Bar } from "react-chartjs-2";
 
 const Graph = () => {
     const url = window.location.href.split('/').pop();
-    
+    console.log(url);
     let dataGraph = [];
 
     switch(url) {
-      case "SA":
+      case "MG":
           dataGraph = {
             data: [1, 2, 4, 8, 2],
             labels: ["a", "b", "c", "d", "e"]
           }
           break;
-      case "NA":
+      case "ST":
           dataGraph = {
             data: [4, 9, 2, 3, 1],
             labels: ["a", "b", "c", "d", "e"]
           }
           break;
-      case "EU":
+      case "SMG":
           dataGraph = {
             data: [3, 5, 9, 1, 1],
             labels: ["a", "b", "c", "d", "e"]
           }
           break;
-      case "ME":
+      case "ML":
           dataGraph = {
             data: [8, 8, 2, 3, 3],
             labels: ["a", "b", "c", "d", "e"]
           }
           break;
-      case "AU":
+      case "PC":
           dataGraph = {
             data: [1, 2, 2, 1, 0],
             labels: ["a", "b", "c", "d", "e"]
@@ -81,7 +81,8 @@ const Graph = () => {
           // color: "rgba(255,255,255,1)"
         }]
       };
-    return ( <div>
+    return ( 
+    <div>
         <Bar 
         //className="white-background"
         data={chartData}
