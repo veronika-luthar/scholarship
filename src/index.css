@@ -145,3 +145,10 @@ a:hover {
 .white-background {
   background-color:white;
 }
+
+.text {
+  color: white;
+  text-align: center;
+  font-size: 2vw;
+
+}

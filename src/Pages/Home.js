@@ -5,7 +5,7 @@ function Home(props) {
     return (
 
           <div>
-              {<h1> Search Bar </h1>}
+              {<h1 className='text'> Click on a Zone below </h1>}
               {props.children}
           </div>
 
