@@ -1,16 +1,42 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Scatter } from "react-chartjs-2";
 
 const Graph = () => {
     const url = window.location.href.split('/').pop();
     console.log(url);
     let dataGraph = [];
-
+  let dataGraph2 = [];
     switch(url) {
       case "MG":
           dataGraph = {
-            data: [1, 2, 4, 8, 2],
-            labels: ["a", "b", "c", "d", "e"]
+            data: [{
+              x: 1,
+              y: 0
+            }, {
+              x: 31,
+              y: 10
+            }, {
+              x: 10,
+              y: 5
+            }, {
+              x: 0.5,
+              y: 5.5
+            }],
+          }
+          dataGraph2 = {
+            data: [{
+              x: 1,
+              y: 4
+            }, {
+              x: 31,
+              y: 7
+            }, {
+              x: 10,
+              y: 1
+            }, {
+              x: 0.5,
+              y: 2
+            }],
           }
           break;
       case "ST":
@@ -79,11 +105,15 @@ const Graph = () => {
           data: dataGraph.data,
           backgroundColor: barColor,
           // color: "rgba(255,255,255,1)"
+        }, {
+          label: "dgsg",
+          data: dataGraph2.data,
+          backgroundColor: "rgba(255,255,255,1)"
         }]
       };
     return ( 
     <div>
-        <Bar 
+        <Scatter 
         //className="white-background"
         data={chartData}
         options={{
