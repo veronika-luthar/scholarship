@@ -1,10 +1,8 @@
-let southernSurfaceSample  = [
+export let southernSurfaceSample  = [
     {
         name: 'Cyanide',
         date: '08/03/2021',
         result: 0.005,
-     
-             
     },
     {
         name: 'Cyanide',
@@ -32,33 +30,8 @@ let southernSurfaceSample  = [
 ]
 
 
-function blah() {
-    let allresult={};
-    let datasets=[];
 
-    for(let i = 0; i < southernSurfaceSample.length; i++){
-        
-        let _name=southernSurfaceSample[i].name;
-        if ( ! allresult[_name] ) {
-            allresult[_name]=[];
-        }
-        allresult[_name].push({x: southernSurfaceSample[i].date, y: southernSurfaceSample[i].result});
-
-
-    }
-
-    for (const key in allresult) {
-        let blah=allresult[key];
-        let str="";
-        for(let i=0; i<blah.length; i++)
-        {
-            str+="x: "+blah[i].x+"  y:"+blah[i].y+", ";
-        }
-        console.log(`${key}: ${str}`);
-    }
-}
-
-blah();
+// return southernSurfaceSample;
 
 // // const chartData = {
 //     // labels: dataGraph.labels, 

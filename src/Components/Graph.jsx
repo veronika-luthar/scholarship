@@ -1,43 +1,73 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
+import {southernSurfaceSample} from "../Data/SouthernSurfaceSample";
 
 const Graph = () => {
     const url = window.location.href.split('/').pop();
     console.log(url);
     let dataGraph = [];
   let dataGraph2 = [];
+
+  function dataConversion(sourceData) {
+    let allresult={};
+    let dataset=[];
+
+    for(let i = 0; i < sourceData.length; i++){
+        
+        let _name=sourceData[i].name;
+        if ( ! allresult[_name] ) {
+            allresult[_name]=[];
+        }
+        allresult[_name].push({x: sourceData[i].date.split('/')[0], y: sourceData[i].result});
+    }
+
+    for (const _name in allresult) {
+        let _data=allresult[_name];
+        let text="";
+        let newDataset = {label: _name, data: _data, backgroundColor: "rgba(255,0,0,1)"};
+        dataset.push(newDataset);
+    }
+    return {
+        datasets: dataset
+    }
+}
+ const fgg = {
+  datasets: [{
+    label: 'Scatter Dataset',
+    data: [{
+      x: -10,
+      y: 0
+    }, {
+      x: 0,
+      y: 10
+    }, {
+      x: 10,
+      y: 5
+    }, {
+      x: 0.5,
+      y: 5.5
+    }],
+    backgroundColor: 'rgb(255, 99, 132)'
+  }],
+}
+
+function bob(_dataset) {
+  let dataset = _dataset.datasets;
+    for(let i = 0; i < dataset.length; i ++){
+      console.log(dataset[i].label);
+      for(let j = 0; j < dataset[i].data.length; j++){
+        console.log(dataset[i].data[j].x + " " + dataset[i].data[j].y);
+      }
+    }
+}
+
+let chartData;
+
+
     switch(url) {
       case "MG":
-          dataGraph = {
-            data: [{
-              x: 1,
-              y: 0
-            }, {
-              x: 31,
-              y: 10
-            }, {
-              x: 10,
-              y: 5
-            }, {
-              x: 0.5,
-              y: 5.5
-            }],
-          }
-          dataGraph2 = {
-            data: [{
-              x: 1,
-              y: 4
-            }, {
-              x: 31,
-              y: 7
-            }, {
-              x: 10,
-              y: 1
-            }, {
-              x: 0.5,
-              y: 2
-            }],
-          }
+          chartData = dataConversion(southernSurfaceSample);
+          bob(chartData);
           break;
       case "ST":
           dataGraph = {
@@ -79,38 +109,38 @@ const Graph = () => {
     
     // let test = dataGraph.data.filter(result => result.length > 1);
     // console.log(test);
-    let barColor = [];
-    for(let i = 0; i < dataGraph.data.length; ){
-      if(dataGraph.data[i] <= 1){
-        dataGraph.labels.splice([i], 1);
-        dataGraph.data.splice([i], 1);
-        continue;
-      }
-      if(dataGraph.data[i] > 3 && dataGraph.data[i] < 5 ){
-        barColor.push('rgba(253,253,150,1)');
-      }
-      else if(dataGraph.data[i] > 5){
-        barColor.push('rgba(255,105,97,1)');
-      }
-      else {
-        barColor.push('rgba(119,221,119,1)');
-      }
-      i++;
-    }
+    // let barColor = [];
+    // for(let i = 0; i < dataGraph.data.length; ){
+    //   if(dataGraph.data[i] <= 1){
+    //     dataGraph.labels.splice([i], 1);
+    //     dataGraph.data.splice([i], 1);
+    //     continue;
+    //   }
+    //   if(dataGraph.data[i] > 3 && dataGraph.data[i] < 5 ){
+    //     barColor.push('rgba(253,253,150,1)');
+    //   }
+    //   else if(dataGraph.data[i] > 5){
+    //     barColor.push('rgba(255,105,97,1)');
+    //   }
+    //   else {
+    //     barColor.push('rgba(119,221,119,1)');
+    //   }
+    //   i++;
+    // } 
 
-    const chartData = {
-        labels: dataGraph.labels, 
-        datasets: [{
-          label: "bob",
-          data: dataGraph.data,
-          backgroundColor: barColor,
-          // color: "rgba(255,255,255,1)"
-        }, {
-          label: "dgsg",
-          data: dataGraph2.data,
-          backgroundColor: "rgba(255,255,255,1)"
-        }]
-      };
+    // const chartData = {
+    //     labels: dataGraph.labels, 
+    //     datasets: [{
+    //       label: "bob",
+    //       data: dataGraph.data,
+    //       backgroundColor: barColor,
+    //       // color: "rgba(255,255,255,1)"
+    //     }, {
+    //       label: "dgsg",
+    //       data: dataGraph2.data,
+    //       backgroundColor: "rgba(255,255,255,1)"
+    //     }]
+    //   };
     return ( 
     <div>
         <Scatter 
@@ -127,13 +157,16 @@ const Graph = () => {
          scales: {
           y: {
               suggestedMin: 0,
-              suggestedMax: 10,
+              suggestedMax: 0.01,
               ticks: {
                 color: "rgba(255,255,255,1)"
               }
           },
           x: {
+            suggestedMax: 31,
+            suggestedMin:  1,
               ticks: {
+                stepSize: 1,
                 color: "rgba(255,255,255,1)"
               }
           }
