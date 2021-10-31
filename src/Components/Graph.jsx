@@ -1,6 +1,10 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
 import {southernSurfaceSample} from "../Data/SouthernSurfaceSample";
+import {mountGrand} from "../Data/MountGrand";
+import {mosgiel} from "../Data/Mosgiel";
+import {portChalmers} from "../Data/PortChalmers";
+import {southernMountGrand} from "../Data/Southern-MountGrand";
 
 
 const Graph = () => {
@@ -32,7 +36,7 @@ const Graph = () => {
   }
 
     function randomColour() {
-      let colour = "rgb(";
+      let colour = "rgba(";
       for(let i = 0; i < 3; i++){
         let colourCode = Math.floor(Math.random() * 256) + 50;
         colour += colourCode + ","
@@ -43,19 +47,19 @@ const Graph = () => {
 
     switch(url) {
       case "MG":
-          chartData = dataConversion(southernSurfaceSample);
+          chartData = dataConversion(mountGrand);
           break;
       case "ST":
           chartData = dataConversion(southernSurfaceSample);
           break;
       case "SMG":
-          chartData = dataConversion(southernSurfaceSample);
+          chartData = dataConversion(southernMountGrand);
           break;
       case "ML":
-          chartData = dataConversion(southernSurfaceSample);
+          chartData = dataConversion(mosgiel);
           break;
       case "PC":
-          chartData = dataConversion(southernSurfaceSample);
+          chartData = dataConversion(portChalmers);
           break;
       }
 
