@@ -6,7 +6,6 @@ const Graph = () => {
     const url = window.location.href.split('/').pop();
     console.log(url);
     let dataGraph = [];
-  let dataGraph2 = [];
 
   function dataConversion(sourceData) {
     let allresult={};
@@ -23,43 +22,55 @@ const Graph = () => {
 
     for (const _name in allresult) {
         let _data=allresult[_name];
-        let text="";
-        let newDataset = {label: _name, data: _data, backgroundColor: "rgba(255,0,0,1)"};
+        let newDataset = {label: _name, data: _data, backgroundColor: randomColour()};
         dataset.push(newDataset);
     }
     return {
         datasets: dataset
     }
 }
- const fgg = {
-  datasets: [{
-    label: 'Scatter Dataset',
-    data: [{
-      x: -10,
-      y: 0
-    }, {
-      x: 0,
-      y: 10
-    }, {
-      x: 10,
-      y: 5
-    }, {
-      x: 0.5,
-      y: 5.5
-    }],
-    backgroundColor: 'rgb(255, 99, 132)'
-  }],
+
+function randomColour() {
+  let colour = "rgb(";
+  for(let i = 0; i < 3; i++){
+    let colourCode = Math.floor(Math.random() * 256) + 1;
+    colour += colourCode + ","
+
+  }
+  return colour + "1)";
 }
 
-function bob(_dataset) {
-  let dataset = _dataset.datasets;
-    for(let i = 0; i < dataset.length; i ++){
-      console.log(dataset[i].label);
-      for(let j = 0; j < dataset[i].data.length; j++){
-        console.log(dataset[i].data[j].x + " " + dataset[i].data[j].y);
-      }
-    }
-}
+
+
+//  const fgg = {
+//   datasets: [{
+//     label: 'Scatter Dataset',
+//     data: [{
+//       x: -10,
+//       y: 0
+//     }, {
+//       x: 0,
+//       y: 10
+//     }, {
+//       x: 10,
+//       y: 5
+//     }, {
+//       x: 0.5,
+//       y: 5.5
+//     }],
+//     backgroundColor: 'rgb(255, 99, 132)'
+//   }],
+// }
+
+// function bob(_dataset) {
+//   let dataset = _dataset.datasets;
+//     for(let i = 0; i < dataset.length; i ++){
+//       console.log(dataset[i].label);
+//       for(let j = 0; j < dataset[i].data.length; j++){
+//         console.log(dataset[i].data[j].x + " " + dataset[i].data[j].y);
+//       }
+//     }
+// }
 
 let chartData;
 
@@ -67,7 +78,7 @@ let chartData;
     switch(url) {
       case "MG":
           chartData = dataConversion(southernSurfaceSample);
-          bob(chartData);
+         // bob(chartData);
           break;
       case "ST":
           dataGraph = {
