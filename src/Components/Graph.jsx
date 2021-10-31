@@ -23,7 +23,7 @@ const Graph = () => {
 
       for (const _name in allresult) {
           let _data=allresult[_name];
-          let newDataset = {label: _name, data: _data, backgroundColor: randomColour()};
+          let newDataset = {label: _name, data: _data, backgroundColor: randomColour(), pointRadius: 10, pointHoverRadius: 10};
           dataset.push(newDataset);
       }
       return {
@@ -73,6 +73,13 @@ const Graph = () => {
           },
          scales: {
           y: {
+            title: {
+              display: true,
+              text: "Quantity (g/m³)",
+              color: "rgba(255,255,255,1)",
+              font: {
+                  size: 20
+              }},
               suggestedMin: 0,
               suggestedMax: 0.01,
               ticks: {
@@ -80,6 +87,13 @@ const Graph = () => {
               }
           },
           x: {
+            title: {
+              display: true,
+              text: "March (days)",
+              color: "rgba(255,255,255,1)",
+              font: {
+                  size: 20
+              }},
             suggestedMax: 31,
             suggestedMin:  1,
               ticks: {

@@ -24,10 +24,6 @@ export let southernSurfaceSample  = [
         date: '06/03/2021',
         result: 0.008
     },
-    {   name: 'Boron', 
-        date: '06/03/2021',
-        result: 0.05
-    },
     {   name: 'Cadmium', 
         date: '06/03/2021',
         result: 0.001
