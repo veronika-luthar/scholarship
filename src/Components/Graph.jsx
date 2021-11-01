@@ -27,22 +27,27 @@ const Graph = () => {
 
       for (const _name in allresult) {
           let _data=allresult[_name];
-          let newDataset = {label: _name, data: _data, backgroundColor: randomColour(), pointRadius: 10, pointHoverRadius: 10};
+          let newDataset = {label: _name, data: _data, backgroundColor: stringToColour(_name), pointRadius: 10, pointHoverRadius: 10};
           dataset.push(newDataset);
       }
       return {
           datasets: dataset
       }
   }
+  
+    function stringToColour(str) {
+      let stringHash = 0;
 
-    function randomColour() {
-      let colour = "rgba(";
-      for(let i = 0; i < 3; i++){
-        let colourCode = Math.floor(Math.random() * 256) + 50;
-        colour += colourCode + ","
-
+      for(let i = 0; i < str.length; i++){
+        stringHash = str.charCodeAt(i) + ((stringHash << 5) - stringHash);
       }
-      return colour + "1)";
+
+      let colour = '#';
+      for(let i = 0; i < 3; i++){
+        let value = (stringHash >> (i * 5)) & 0xFF;
+        colour += ('00' + value.toString(16)).substr(-2);
+      }
+      return colour;
     }
 
     switch(url) {
