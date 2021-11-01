@@ -63,6 +63,10 @@ const Graph = () => {
           break;
       }
 
+      const tooltipName = (tooltipItems) => {
+        return "etts";
+      }
+
     return ( 
     <div>
         <Scatter 
@@ -74,6 +78,11 @@ const Graph = () => {
               text: "Water Data",
               color: "rgba(255,255,255,1)"
             },
+            tooltip: {
+              callbacks: {
+                title: tooltipName
+              }
+            }
           },
          scales: {
           y: {
