@@ -62,11 +62,6 @@ const Graph = () => {
           chartData = dataConversion(portChalmers);
           break;
       }
-
-      const tooltipName = (tooltipItems) => {
-        return "etts";
-      }
-
     return ( 
     <div>
         <Scatter 
@@ -80,7 +75,19 @@ const Graph = () => {
             },
             tooltip: {
               callbacks: {
-                title: tooltipName
+
+                //   beforeLabel: function (tooltipItem) {
+ 
+                //     let tooltipLabel=tooltipItem.dataset.label;              
+                //     return tooltipLabel;
+                    
+                // },
+                 label:  function (tooltipItem) {
+ 
+                  let tooltipLabel=tooltipItem.dataset.label;              
+                  return tooltipLabel;
+                 }
+
               }
             }
           },
