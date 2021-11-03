@@ -73,6 +73,12 @@ const Graph = () => {
         data={chartData}
         options={{
           plugins: {
+            legend: {
+              display: true,
+              labels: {
+                  color: 'rgba(255, 255, 255, 1)'
+              }
+            },
             title: {
               display: true,
               text: "Water Data",
@@ -114,7 +120,7 @@ const Graph = () => {
           x: {
             title: {
               display: true,
-              text: "March (days)",
+              text: "March (days tested)",
               color: "rgba(255,255,255,1)",
               font: {
                   size: 20
