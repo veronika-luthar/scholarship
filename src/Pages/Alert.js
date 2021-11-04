@@ -31,9 +31,9 @@ function areaAlert (area) {
     }
 
     for(let i = 0; i < area.length; i++){
-        if(area[i].result > 0.005){
+        if(area[i].result > 0.008){
             if(last != areaName) {
-                alertText+= "<h2>" + areaName + "</h2>" + "High levels of " + area[i].name + "<br>";
+                alertText+= "<h2 class='alertArea'>" + areaName + "</h2>" + " High levels of " + area[i].name + "<br>";
             }
             else {
                 alertText+= "High levels of " + area[i].name + "<br>";
@@ -52,7 +52,7 @@ function areaAlert (area) {
 
 
     return (
-        <div dangerouslySetInnerHTML={{ __html:alertText }}></div>
+        <div className='alert' dangerouslySetInnerHTML={{ __html:alertText }}></div>
     )
 
 }
