@@ -6,12 +6,12 @@ import {portChalmers} from "../Data/PortChalmers";
 import {southernMountGrand} from "../Data/Southern-MountGrand";
 
 const Alert = () => {
-let alertText;
+let alertText="";
 
 function areaAlert (area) {
     for(let i = 0; i < area.length; i++){
         if(area[i].result > 0.005){
-            alertText += "High levels of " + area[i].name + " in"
+            alertText += "High levels of " + area[i].name + " in <br>"
         }
     }
 }
@@ -19,7 +19,7 @@ function areaAlert (area) {
 areaAlert(mountGrand);
 
     return (
-        <div>{<p>{alertText}</p>}</div>
+        <div dangerouslySetInnerHTML={{ __html:alertText }}></div>
     )
 }
 

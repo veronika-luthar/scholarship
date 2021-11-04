@@ -68,10 +68,11 @@ const Graph = () => {
           break;
       }
     return ( 
-    <div>
+    <div className="chart-container" >
         <Scatter 
         data={chartData}
         options={{
+          responsive: true,
           plugins: {
             legend: {
               display: true,
