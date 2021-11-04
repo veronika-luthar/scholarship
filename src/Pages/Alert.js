@@ -6,16 +6,20 @@ import {portChalmers} from "../Data/PortChalmers";
 import {southernMountGrand} from "../Data/Southern-MountGrand";
 
 const Alert = () => {
-let test;
-    for(let i = 0; i < mosgiel.length; i++){
-      //console.log(mosgiel[i].result)
-        if(mosgiel[i].result > 0.003){
-            test += "High levels of "  + mosgiel[i].name + " in Mosgiel."
+let alertText;
+
+function areaAlert (area) {
+    for(let i = 0; i < area.length; i++){
+        if(area[i].result > 0.005){
+            alertText += "High levels of " + area[i].name + " in"
         }
     }
+}
+
+areaAlert(mountGrand);
 
     return (
-        <div>{<p>{test}</p>}</div>
+        <div>{<p>{alertText}</p>}</div>
     )
 }
 
