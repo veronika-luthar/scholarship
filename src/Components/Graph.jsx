@@ -73,6 +73,7 @@ const Graph = () => {
         data={chartData}
         options={{
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: {
               display: true,
