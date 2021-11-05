@@ -192,3 +192,7 @@ a:hover {
   height: 4vh;
   width: 4vh; 
 }
+
+.map-class {
+  display:none;
+}
