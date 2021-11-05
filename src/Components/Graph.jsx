@@ -67,6 +67,7 @@ const Graph = () => {
           chartData = dataConversion(portChalmers);
           break;
       }
+
     return ( 
     <div className="chart-container" >
         <Scatter 

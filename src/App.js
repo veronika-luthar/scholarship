@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <div className="parent">
           <Header />
-          <div className="page-content">
+          <div className="page-content" id='pageContent'>
             <Route exact path="/">
               <Home>
                 <Map/>
