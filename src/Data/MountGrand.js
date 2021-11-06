@@ -63,7 +63,7 @@ export let mountGrandChlorine  = [
     {
         name: 'Chlorine',
         date: '02/03/2021',
-        result: 0.003
+        result: 0.009
     },
     {   name: 'Chlorine', 
         date: '03/03/2021',
@@ -125,7 +125,7 @@ export let mountGrandEColi  = [
     {
         name: 'E. Coli',
         date: '02/03/2021',
-        result: 0
+        result: 1
     },
     {   name: 'E. Coli', 
         date: '03/03/2021',
