@@ -6,20 +6,10 @@ import imageMapResize from 'image-map-resizer';
 
     const Map = () => {
 
-        const [show, toggleShow] = React.useState(false);
-
         useEffect(() => {
             imageMapResize('[name="image-map"]');
         }, []);
 
-        
-        let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
-
-
-
-        function test(){
-            toggleShow(show ? 'show' : 'hide')
-        }
 /*
             for(let i = 0; i < radioButtons.length; i++){
                 if(radioButtons[i].checked == true){
@@ -35,11 +25,8 @@ import imageMapResize from 'image-map-resizer';
 
         return (
              <div className='map'>
-                 
-                 {results.map(function(name, i) {
-                     return <label><input name="radioGroup" type="radio" value={name} onClick={test}/>{name}</label>;
-                 })}
-                    {show && <div><img src= {zoneMap} className='map' usemap="#image-map" style={{ height: '90%', width: 'auto' }}></img>
+
+                  <img src= {zoneMap} className='map' usemap="#image-map" style={{ height: '90%', width: 'auto' }}></img>
                         <map name="image-map" >
                             <area target="" alt="Mt Grand" title="Mt Grand" href="MG" coords="360,114,336,134,311,149,285,151,271,157,269,172,276,186,267,196,254,211,265,228,285,229,299,236,290,258,295,268,284,292,287,303,301,314,306,323,290,331,294,341,317,368,344,361,336,340,338,322,336,312,331,305,325,295,325,282,336,280,352,271,360,251,366,232,371,219,382,205,389,186,385,173,375,163,380,157,390,165,401,173,415,184,433,182,436,195,444,210,454,219,471,214,503,205,532,180,543,145,545,123,486,114,426,110,404,110" shape="poly"></area>
                             <area target="" alt="Mt Grand" title="Mt Grand" href="MG" coords="153,107,124,116,93,133,67,148,57,163,57,175,62,189,65,197,82,195,119,181,146,170,192,165,191,145,182,124" shape="poly"></area>
@@ -49,7 +36,7 @@ import imageMapResize from 'image-map-resizer';
                             <area target="" alt="Southern" title="Southern" href="ST" coords="289,261,276,273,248,280,214,265,192,261,158,279,137,294,135,325,165,337,181,337,158,356,160,373,136,384,102,396,52,399,23,412,12,425,5,437,-1,455,18,453,37,442,57,427,85,415,116,412,145,397,165,389,189,379,207,372,219,355,225,341,244,333,265,332,278,340,286,344,295,343,287,329,302,319,286,298,293,266" shape="poly"></area>
                             <area target="" alt="Southern" title="Southern" href="ST" coords="342,348,359,340,388,335,415,327,421,321,416,298,426,281,407,281,379,262,364,254,336,278,327,284,327,298,338,316,336,340" shape="poly"></area>
                             <area target="" alt="Mosgiel"  title="Mosgiel" href="ML" coords="144,172,35,206,9,225,19,253,10,282,25,310,62,307,79,293,75,271,70,258,88,246,106,225,144,201,151,182" shape="poly"></area>
-                        </map></div>}
+                        </map>
 
              
              </div>

@@ -12,6 +12,13 @@ const Graph = () => {
 
     const url = window.location.href.split('/').pop();
 
+    const [show, toggleShow] = React.useState(false);
+    let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
+
+    function test(){
+      toggleShow(show ? 'show' : 'hide')
+  }
+
     function dataConversion(sourceData) {
       let allresult={};
       let dataset=[];
@@ -68,9 +75,18 @@ const Graph = () => {
           break;
       }
 
+
+
+      
+
+
+
     return ( 
     <div className="chart-container" >
-        <Scatter 
+      {results.map(function(name, i) {
+                     return <label><input name="radioGroup" type="radio" value={name} onClick={test}/>{name}</label>;
+                 })}
+                 {show && <Scatter 
         data={chartData}
         options={{
           responsive: true,
@@ -136,7 +152,8 @@ const Graph = () => {
               }
           }
         }
-        }} />
+        }} />}
+        
       </div> )
 }
 
