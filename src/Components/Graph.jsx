@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useRef,useState,useEffect } from "react";
 import { Scatter } from "react-chartjs-2";
 import {southernSurfaceSample} from "../Data/Southern/Metal";
 import {mountGrand} from "../Data/MountGrand/Metal";
 import {mosgiel} from "../Data/Mosgiel/Metal";
 import {portChalmers} from "../Data/PortChalmers/Metal";
 import {southernMountGrand} from "../Data/Southern-MountGrand/Metal";
+import {mosgielChlorine} from "../Data/Mosgiel/Chlorine";
 
 
 const Graph = () => {
+
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
+
+    const [stateChart, setStateChart] = useState({});
+
     let chartData;
 
     const url = window.location.href.split('/').pop();
+    const ref = useRef();
 
-    const [show, toggleShow] = React.useState(false);
-    let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
+    useEffect(() => {
+      
+      setStateChart(chartData);
+  }, []);
 
-    function test(){
-      toggleShow(show ? 'show' : 'hide')
-  }
 
     function dataConversion(sourceData) {
       let allresult={};
@@ -57,6 +64,42 @@ const Graph = () => {
       return colour;
     }
 
+      function test(e){
+        console.log(e.target.defaultValue);
+        updateChart(e.target.defaultValue);
+      }
+
+      function updateChart(chartType) {
+        switch(url) {
+          case "MG":
+              chartData = dataConversion(mountGrand);
+              break;
+          case "ST":
+              chartData = dataConversion(southernSurfaceSample);
+              break;
+          case "SMG":
+              chartData = dataConversion(southernMountGrand);
+              break;
+          case "ML":
+              chartData = dataConversion(mosgielChlorine);
+              break;
+          case "PC":
+              chartData = dataConversion(portChalmers);
+              break;
+          }
+
+          setStateChart(chartData);
+
+
+
+         
+
+    }
+
+  
+
+    let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
+
     switch(url) {
       case "MG":
           chartData = dataConversion(mountGrand);
@@ -74,14 +117,16 @@ const Graph = () => {
           chartData = dataConversion(portChalmers);
           break;
       }
-
+    
     return ( 
     <div className="chart-container" >
       {results.map(function(name, i) {
-          return <label><input name="radioGroup" type="radio" value={name} onClick={test}/>{name}</label>;
+          return <label key={name}><input name="radioGroup" /* defaultChecked={name=="Metal"} */ type="radio" value={name} onClick={test}/>{name}</label>;
           })}
-    {show && <Scatter 
-        data={chartData}
+    <Scatter 
+        ref={ref}
+        
+        data={stateChart}
         options={{
           responsive: true,
           maintainAspectRatio: false,
@@ -139,7 +184,7 @@ const Graph = () => {
               }
           }
         }
-        }} />}
+        }} />
         
       </div> )
 }
