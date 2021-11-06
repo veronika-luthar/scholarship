@@ -1,10 +1,10 @@
 import React from "react";
 import { Scatter } from "react-chartjs-2";
-import {southernSurfaceSample} from "../Data/SouthernSurfaceSample";
-import {mountGrand} from "../Data/MountGrand";
-import {mosgiel} from "../Data/Mosgiel";
-import {portChalmers} from "../Data/PortChalmers";
-import {southernMountGrand} from "../Data/Southern-MountGrand";
+import {southernSurfaceSample} from "../Data/Southern/Metal";
+import {mountGrand} from "../Data/MountGrand/Metal";
+import {mosgiel} from "../Data/Mosgiel/Metal";
+import {portChalmers} from "../Data/PortChalmers/Metal";
+import {southernMountGrand} from "../Data/Southern-MountGrand/Metal";
 
 
 const Graph = () => {
@@ -75,18 +75,12 @@ const Graph = () => {
           break;
       }
 
-
-
-      
-
-
-
     return ( 
     <div className="chart-container" >
       {results.map(function(name, i) {
-                     return <label><input name="radioGroup" type="radio" value={name} onClick={test}/>{name}</label>;
-                 })}
-                 {show && <Scatter 
+          return <label><input name="radioGroup" type="radio" value={name} onClick={test}/>{name}</label>;
+          })}
+    {show && <Scatter 
         data={chartData}
         options={{
           responsive: true,
@@ -105,13 +99,6 @@ const Graph = () => {
             },
             tooltip: {
               callbacks: {
-
-                //   beforeLabel: function (tooltipItem) {
- 
-                //     let tooltipLabel=tooltipItem.dataset.label;              
-                //     return tooltipLabel;
-                    
-                // },
                  label:  function (tooltipItem) {
  
                   let tooltipLabel=tooltipItem.dataset.label;              

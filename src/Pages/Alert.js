@@ -1,9 +1,9 @@
 import React from "react";
-import {southernSurfaceSample} from "../Data/SouthernSurfaceSample";
-import {mountGrand} from "../Data/MountGrand";
-import {mosgiel} from "../Data/Mosgiel";
-import {portChalmers} from "../Data/PortChalmers";
-import {southernMountGrand} from "../Data/Southern-MountGrand";
+import {southernSurfaceSample} from "../Data/Southern/Metal";
+import {mountGrand} from "../Data/MountGrand/Metal";
+import {mosgiel} from "../Data/Mosgiel/Metal";
+import {portChalmers} from "../Data/PortChalmers/Metal";
+import {southernMountGrand} from "../Data/Southern-MountGrand/Metal";
 
 const Alert = () => {
 let alertText="";
