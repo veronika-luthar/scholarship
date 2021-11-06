@@ -1,17 +1,13 @@
 import React, { useRef,useState,useEffect } from "react";
 import { Scatter } from "react-chartjs-2";
-import {southernSurfaceSample} from "../Data/Southern/Metal";
-import {mountGrand} from "../Data/MountGrand/Metal";
-import {mosgiel} from "../Data/Mosgiel/Metal";
-import {portChalmers} from "../Data/PortChalmers/Metal";
-import {southernMountGrand} from "../Data/Southern-MountGrand/Metal";
-import {mosgielChlorine} from "../Data/Mosgiel/Chlorine";
+import {southernMetal, southernChlorine, southernTotalCloroforms, southernEColi} from "../Data/Southern";
+import {mountGrandMetal, mountGrandChlorine, mountGrandTotalCloroforms, mountGrandEColi} from "../Data/MountGrand";
+import {mosgielMetal, mosgielChlorine, mosgielTotalCloroforms, mosgielEColi} from "../Data/Mosgiel";
+import {portChalmersMetal, portChalmersChlorine, portChalmersTotalCloroforms, portChalmersEColi} from "../Data/PortChalmers";
+import {southernMountGrandMetal, southernMountGrandChlorine, southernMountGrandTotalCloroforms, southernMountGrandEColi} from "../Data/Southern-MountGrand";
 
 
 const Graph = () => {
-
-    const [, updateState] = React.useState();
-    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     const [stateChart, setStateChart] = useState({});
 
@@ -64,6 +60,7 @@ const Graph = () => {
       return colour;
     }
 
+
       function test(e){
         console.log(e.target.defaultValue);
         updateChart(e.target.defaultValue);
@@ -71,52 +68,97 @@ const Graph = () => {
 
       function updateChart(chartType) {
         switch(url) {
+
           case "MG":
-              chartData = dataConversion(mountGrand);
+            switch(chartType) {
+              case "Chlorine":
+                chartData = dataConversion(mountGrandChlorine);
+                break;
+              case "Metal":
+                chartData = dataConversion(mountGrandMetal);
+                break;
+              case "Total Cloroforms":
+                chartData = dataConversion(mountGrandTotalCloroforms);
+                break;
+              case "E. Coli":
+                chartData = dataConversion(mountGrandEColi);
+                break;
+              }
               break;
+
           case "ST":
-              chartData = dataConversion(southernSurfaceSample);
+            switch(chartType) {
+              case "Chlorine":
+                chartData = dataConversion(southernChlorine);
+                break;
+              case "Metal":
+                chartData = dataConversion(southernMetal);
+                break;
+              case "Total Cloroforms":
+                chartData = dataConversion(southernTotalCloroforms);
+                break;
+              case "E. Coli":
+                chartData = dataConversion(southernEColi);
+                break;
+              }
               break;
           case "SMG":
-              chartData = dataConversion(southernMountGrand);
+            switch(chartType) {
+              case "Chlorine":
+                chartData = dataConversion(southernMountGrandChlorine);
+                break;
+              case "Metal":
+                chartData = dataConversion(southernMountGrandMetal);
+                break;
+              case "Total Cloroforms":
+                chartData = dataConversion(southernMountGrandTotalCloroforms);
+                break;
+              case "E. Coli":
+                chartData = dataConversion(southernMountGrandEColi);
+              break;
+            }
               break;
           case "ML":
-              chartData = dataConversion(mosgielChlorine);
+            switch(chartType) {
+              case "Chlorine":
+                chartData = dataConversion(mosgielChlorine);
+                break;
+              case "Metal":
+                chartData = dataConversion(mosgielMetal);
+                break;
+              case "Total Cloroforms":
+                chartData = dataConversion(mosgielTotalCloroforms);
+                break;
+              case "E. Coli":
+                chartData = dataConversion(mosgielEColi);
+                break;
+            }
               break;
           case "PC":
-              chartData = dataConversion(portChalmers);
+            switch(chartType) {
+              case "Chlorine":
+                chartData = dataConversion(portChalmersChlorine);
+                break;
+              case "Metal":
+                chartData = dataConversion(portChalmersMetal);
+                break;
+              case "Total Cloroforms":
+                chartData = dataConversion(portChalmersTotalCloroforms);
+                break;
+              case "E. Coli":
+                chartData = dataConversion(portChalmersEColi);
+                break;
+            }
               break;
           }
 
           setStateChart(chartData);
-
-
-
-         
 
     }
 
   
 
     let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
-
-    switch(url) {
-      case "MG":
-          chartData = dataConversion(mountGrand);
-          break;
-      case "ST":
-          chartData = dataConversion(southernSurfaceSample);
-          break;
-      case "SMG":
-          chartData = dataConversion(southernMountGrand);
-          break;
-      case "ML":
-          chartData = dataConversion(mosgiel);
-          break;
-      case "PC":
-          chartData = dataConversion(portChalmers);
-          break;
-      }
     
     return ( 
     <div className="chart-container" >

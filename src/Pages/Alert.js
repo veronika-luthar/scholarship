@@ -1,9 +1,9 @@
 import React from "react";
-import {southernSurfaceSample} from "../Data/Southern/Metal";
-import {mountGrand} from "../Data/MountGrand/Metal";
-import {mosgiel} from "../Data/Mosgiel/Metal";
-import {portChalmers} from "../Data/PortChalmers/Metal";
-import {southernMountGrand} from "../Data/Southern-MountGrand/Metal";
+import {southernMetal} from "../Data/Southern";
+import {mountGrandMetal, mountGrandChlorine} from "../Data/MountGrand";
+import {mosgielMetal} from "../Data/Mosgiel";
+import {portChalmersMetal} from "../Data/PortChalmers";
+import {southernMountGrandMetal} from "../Data/Southern-MountGrand";
 
 const Alert = () => {
 let alertText="";
@@ -13,19 +13,19 @@ function areaAlert (area) {
     let last= "";
     
     switch(area) {
-        case mountGrand:
+        case mountGrandMetal || mountGrandChlorine:
             areaName = "Mount Grand";
             break;
-        case southernSurfaceSample:
+        case southernMetal:
             areaName = "Southern";
             break;
-        case mosgiel:
+        case mosgielMetal:
             areaName = "Mosgiel";
             break;
-        case southernMountGrand:
+        case southernMountGrandMetal:
             areaName = "Southern/Mount Grand";
             break;
-        case portChalmers:
+        case portChalmersMetal:
             areaName = "Port Chalmers";
             break;
     }
@@ -44,11 +44,11 @@ function areaAlert (area) {
     }
 
 
-    areaAlert(mountGrand);
-    areaAlert(southernMountGrand);
-    areaAlert(southernSurfaceSample);
-    areaAlert(portChalmers);
-    areaAlert(mosgiel);
+    areaAlert(mountGrandMetal);
+    areaAlert(southernMountGrandMetal);
+    areaAlert(southernMetal);
+    areaAlert(portChalmersMetal);
+    areaAlert(mosgielMetal);
 
 
     return (
