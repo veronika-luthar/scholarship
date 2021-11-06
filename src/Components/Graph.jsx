@@ -17,7 +17,6 @@ const Graph = () => {
     const ref = useRef();
 
     useEffect(() => {
-      
       setStateChart(chartData);
   }, []);
 
@@ -60,13 +59,14 @@ const Graph = () => {
       return colour;
     }
 
+    let areaText ="";
 
       function test(e){
-        console.log(e.target.defaultValue);
         updateChart(e.target.defaultValue);
       }
 
       function updateChart(chartType) {
+        
         switch(url) {
 
           case "MG":
@@ -102,6 +102,7 @@ const Graph = () => {
                 break;
               }
               break;
+
           case "SMG":
             switch(chartType) {
               case "Chlorine":
@@ -118,6 +119,7 @@ const Graph = () => {
               break;
             }
               break;
+
           case "ML":
             switch(chartType) {
               case "Chlorine":
@@ -134,6 +136,7 @@ const Graph = () => {
                 break;
             }
               break;
+
           case "PC":
             switch(chartType) {
               case "Chlorine":
@@ -151,12 +154,9 @@ const Graph = () => {
             }
               break;
           }
-
           setStateChart(chartData);
 
     }
-
-  
 
     let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
     
@@ -181,7 +181,7 @@ const Graph = () => {
             },
             title: {
               display: true,
-              text: "Water Data",
+              text: "Water Supply Testing Results",
               color: "rgba(255,255,255,1)"
             },
             tooltip: {
