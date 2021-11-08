@@ -92,8 +92,6 @@ li {
 .image {
   max-width:100%;
   z-index: 1;
-  height: 20vh;
-  width: 100vw;
 }
 
 .map {
@@ -104,12 +102,7 @@ li {
   
 
 }
-/*
-.imgmap {
-  
-  object-fit: contain;
-  
-} */
+
 a {
   text-decoration: none;
   border-style: solid;
