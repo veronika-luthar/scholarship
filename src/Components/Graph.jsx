@@ -10,21 +10,26 @@ import {southernMountGrandMetal, southernMountGrandChlorine, southernMountGrandT
 
 const Graph = () => {
 
-    const [stateChart, setStateChart] = useState({});
+    const initState = { datasets: [], labels: [] };
+    const [stateChart, setStateChart] = useState(initState);
+    const [stateLabels, setStateLabels] = useState(['0','1']);
+
+    const labarr =['03-04-2021', '09-04-2021', '07-05-2021', '11-05-2021', '25-05-2021', '08-06-2021', '16-06-2021', '03-07-2021', '20-07-2021', '06-08-2021', '10-08-2021', '24-08-2021', '07-09-2021', '15-09-2021', '02-10-2021', '25-08-2021', '26-08-2021', '27-08-2021', '28-08-2021', '29-08-2021', '30-08-2021', '01-09-2021', '02-09-2021', '03-09-2021', '04-09-2021', '05-09-2021', '06-09-2021', '08-09-2021', '09-09-2021', '10-09-2021', '11-09-2021', '12-09-2021', '13-09-2021', '03-10-2021', '04-10-2021', '05-10-2021', '06-10-2021'];
 
     let chartData;
     const { pathname } = useLocation();
-    const url = window.location.href.split('/').pop();
     const ref = useRef();
 
     useEffect(() => {
       setStateChart(chartData);
+      
   }, []);
 
     // converts data from js files to format needed by chartjs
     function dataConversion(sourceData) {
       let allresult={};
       let dataset=[];
+      let labels={};
 
       for(let i = 0; i < sourceData.length; i++){
           //sets object name to the name of substance in raw data
@@ -32,7 +37,9 @@ const Graph = () => {
           if ( ! allresult[_name] ) {
               allresult[_name]=[];
           }
-          allresult[_name].push({x: sourceData[i].date.split('/')[0], y: sourceData[i].result});
+          let _label = sourceData[i].date.replaceAll('/','-');
+          labels[_label]=1;
+          allresult[_name].push({x: _label, y: sourceData[i].result});
       }
 
       for (const _name in allresult) {
@@ -40,7 +47,11 @@ const Graph = () => {
           let newDataset = {label: _name, data: _data, backgroundColor: stringToColour(_name), pointRadius: 10, pointHoverRadius: 10};
           dataset.push(newDataset);
       }
+
       return {
+          labels: Object.keys(labels).map(function(key) {
+            return key;
+          }),
           datasets: dataset
       }
   }
@@ -155,6 +166,8 @@ const Graph = () => {
               break;
           }
           setStateChart(chartData);
+          setStateLabels(chartData.labels);
+
 
     }
 
@@ -194,7 +207,7 @@ const Graph = () => {
 
               }
             }
-          },
+         },
          scales: {
           y: {
             title: {
@@ -210,21 +223,23 @@ const Graph = () => {
                 color: "rgba(255,255,255,1)"
               }
           },
-          x: {
-            title: {
-              display: true,
-              text: "March (days tested)",
-              color: "rgba(255,255,255,1)",
-              font: {
-                  size: 20
-              }},
-            suggestedMax: 31,
-            suggestedMin:  1,
-              ticks: {
-                stepSize: 1,
-                color: "rgba(255,255,255,1)"
-              }
-          }
+           x: {
+            type: "category",
+            labels: [{stateLabels}],
+              title: {
+                display: true,
+                text: "Days tested (date)",
+                color: "rgba(255,255,255,1)",
+               font: {
+                   size: 20
+               }},
+               ticks: {
+                 callback: function(value, index, values) {
+                  return index === 0 ? '' : this.getLabelForValue(value);
+                 },
+                 color: "rgba(255,255,255,1)"
+               }
+           }
         }
         }} />
         
