@@ -165,6 +165,7 @@ a:hover {
 .chart-container {
   position: relative; 
   height:70vh; width:80vw;
+  text-align: center;
 }
 
 .alertArea {

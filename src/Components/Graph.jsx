@@ -59,8 +59,6 @@ const Graph = () => {
       return colour;
     }
 
-    let areaText ="";
-
       function test(e){
         updateChart(e.target.defaultValue);
       }

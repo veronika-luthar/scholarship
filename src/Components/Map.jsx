@@ -10,19 +10,6 @@ import imageMapResize from 'image-map-resizer';
             imageMapResize('[name="image-map"]');
         }, []);
 
-/*
-            for(let i = 0; i < radioButtons.length; i++){
-                if(radioButtons[i].checked == true){
-                    selected = radioButtons[i].value;
-                    console.log(radioButtons[i].value);
-                    console.log(e);
-                }
-            }
-            if ( selected == "" ) {
-               // e.preventDefault(); 
-            } <button onClick={() => toggleShow(!show)}>toggle: {show ? 'show' : 'hide'}</button>   
-        }*/
-
         return (
              <div className='map'>
 
