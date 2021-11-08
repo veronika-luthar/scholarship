@@ -20,13 +20,13 @@ const Graph = () => {
       setStateChart(chartData);
   }, []);
 
-
+    // converts data from js files to format needed by chartjs
     function dataConversion(sourceData) {
       let allresult={};
       let dataset=[];
 
       for(let i = 0; i < sourceData.length; i++){
-          
+          //sets object name to the name of substance in raw data
           let _name=sourceData[i].name;
           if ( ! allresult[_name] ) {
               allresult[_name]=[];
@@ -43,7 +43,7 @@ const Graph = () => {
           datasets: dataset
       }
   }
-  
+    //creates colour based on string hash
     function stringToColour(str) {
       let stringHash = 0;
 
@@ -63,6 +63,7 @@ const Graph = () => {
         updateChart(e.target.defaultValue);
       }
 
+      //updates chart and data
       function updateChart(chartType) {
         
         switch(url) {
