@@ -160,9 +160,9 @@ const Graph = () => {
     let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
     
     return ( 
-    <div className="chart-container" >
+    <div className="chart-container" ><h1 className="white-text">I want to check for:</h1>
       {results.map(function(name, i) {
-          return <label key={name}><input name="radioGroup" /* defaultChecked={name=="Metal"} */ type="radio" value={name} onClick={test}/>{name}</label>;
+          return <label className="radio-text" key={name}><input name="radioGroup" /* defaultChecked={name=="Metal"} */ type="radio" value={name} onClick={test}/>{name}</label>;
           })}
     <Scatter 
         ref={ref}

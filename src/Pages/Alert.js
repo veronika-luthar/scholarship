@@ -33,7 +33,7 @@ function areaAlert (area) {
     for(let i = 0; i < area.length; i++){
         if(area[i].result > 0){
             if(last != areaName) {
-                alertText+= "<h1 class='alertArea'> Boil Water alert</h1><h2 class='alertArea'>" + areaName + "</h2>" + " High levels of " + area[i].name + "<br>";
+                alertText+= "<h1 class='white-text'> Boil Water alert</h1><h2 class='white-text'>" + areaName + "</h2>" + " High levels of " + area[i].name + "<br>";
             }
             else {
                 alertText+= "High levels of " + area[i].name + "<br>";
@@ -51,7 +51,7 @@ function areaAlert (area) {
     areaAlert(mosgielEColi);
     
     if(alertText=="") {
-        alertText = "<h1 class='alertArea'> No Boil Water alerts to show</h1>";
+        alertText = "<h1 class='white-text'> No Boil Water alerts to show</h1>";
     }
 
     return (
