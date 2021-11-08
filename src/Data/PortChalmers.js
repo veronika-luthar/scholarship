@@ -1,117 +1,63 @@
 export let portChalmersMetal  = [
-    {   name: 'Lead', 
-        date: '06/03/2021',
-        result: 0.003
-    },
-    {   name: 'Manganese', 
-        date: '06/03/2021',
-        result: 0.004
-    },
-    {   name: 'Mercury', 
-        date: '02/03/2021',
-        result: 0.002
-    },
-    {   name: 'Nickel', 
-        date: '10/03/2021',
-        result: 0.001
-    },
-    {   name: 'Selenium', 
-        date: '06/03/2021',
-        result: 0.005
-    },
+
 ]
 
 export let portChalmersChlorine  = [
 
-    {   name: 'Chlorine',
-        date: '01/03/2021',
-        result: 0.009
-    },
-    {
-        name: 'Chlorine',
-        date: '02/03/2021',
-        result: 0.002
-    },
-    {   name: 'Chlorine', 
-        date: '03/03/2021',
-        result: 0.002
-    },
-    {   name: 'Chlorine', 
-        date: '05/03/2021',
-        result: 0.008
-    },
-    {   name: 'Chlorine', 
-        date: '10/03/2021',
-        result: 0.010
-    },
-    {   name: 'Chlorine', 
-        date: '06/03/2021',
-        result: 0.002
-    },
-    {   name: 'Chlorine', 
-        date: '14/03/2021',
-        result: 0.003
-    },
-    {   name: 'Chlorine', 
-        date: '21/03/2021',
-        result: 0.004
-    },
-    {   name: 'Chlorine', 
-        date: '06/03/2021',
-        result: 0.001
-    },
-    {   name: 'Chlorine', 
-        date: '02/03/2021',
-        result: 0.001
-    },
+    { name: 'Free Available Chlorine', date: '10/05/2021', result: 0.47 },
+    { name: 'Free Available Chlorine', date: '26/05/2021', result: 0.52 },
+    { name: 'Free Available Chlorine', date: '04/06/2021', result: 0.57 },
+    { name: 'Free Available Chlorine', date: '18/06/2021', result: 0.53 },
+    { name: 'Free Available Chlorine', date: '25/06/2021', result: 0.43 },
+    { name: 'Free Available Chlorine', date: '01/07/2021', result: 0.45 },
+    { name: 'Free Available Chlorine', date: '08/07/2021', result: 0.61 },
+    { name: 'Free Available Chlorine', date: '30/07/2021', result: 0.63 },
+    { name: 'Free Available Chlorine', date: '09/08/2021', result: 0.81 },
+    { name: 'Free Available Chlorine', date: '25/08/2021', result: 0.48 },
+    { name: 'Free Available Chlorine', date: '03/09/2021', result: 0.84 },
+    { name: 'Free Available Chlorine', date: '17/09/2021', result: 0.61 },
+    { name: 'Free Available Chlorine', date: '24/09/2021', result: 0.59 },
+    { name: 'Free Available Chlorine', date: '30/09/2021', result: 0.58 },
+    { name: 'Free Available Chlorine', date: '07/10/2021', result: 0.54 },
+
 ]
 
-export let portChalmersTotalCloroforms  = [
+export let portChalmersTotalColiforms  = [
 
-    {   name: 'Bacteria',
-        date: '01/03/2021',
-        result: 0.001
-    },
-    {
-        name: 'Bacteria',
-        date: '02/03/2021',
-        result: 0.001
-    },
-    {   name: 'Bacteria', 
-        date: '03/03/2021',
-        result: 0.002
-    },
-    {   name: 'Bacteria', 
-        date: '05/03/2021',
-        result: 0.001
-    },
-    {   name: 'Bacteria', 
-        date: '10/03/2021',
-        result: 0.002
-}
+    { name: 'Total Coliforms', date: '10/05/2021', result: 0 },
+    { name: 'Total Coliforms', date: '26/05/2021', result: 0 },
+    { name: 'Total Coliforms', date: '04/06/2021', result: 0 },
+    { name: 'Total Coliforms', date: '18/06/2021', result: 0 },
+    { name: 'Total Coliforms', date: '25/06/2021', result: 0 },
+    { name: 'Total Coliforms', date: '01/07/2021', result: 0 },
+    { name: 'Total Coliforms', date: '08/07/2021', result: 0 },
+    { name: 'Total Coliforms', date: '30/07/2021', result: 0 },
+    { name: 'Total Coliforms', date: '09/08/2021', result: 0 },
+    { name: 'Total Coliforms', date: '25/08/2021', result: 0 },
+    { name: 'Total Coliforms', date: '03/09/2021', result: 0 },
+    { name: 'Total Coliforms', date: '17/09/2021', result: 0 },
+    { name: 'Total Coliforms', date: '24/09/2021', result: 0 },
+    { name: 'Total Coliforms', date: '30/09/2021', result: 0 },
+    { name: 'Total Coliforms', date: '07/10/2021', result: 0 },
+
 ]
 
 export let portChalmersEColi  = [
 
-    {   name: 'E. Coli',
-        date: '01/03/2021',
-        result: 0
-    },
-    {
-        name: 'E. Coli',
-        date: '02/03/2021',
-        result: 0
-    },
-    {   name: 'E. Coli', 
-        date: '03/03/2021',
-        result: 0
-    },
-    {   name: 'E. Coli', 
-        date: '05/03/2021',
-        result: 0
-    },
-    {   name: 'E. Coli', 
-        date: '10/03/2021',
-        result: 0
-}
+    { name: 'E. coli', date: '10/05/2021', result: 0 },
+    { name: 'E. coli', date: '26/05/2021', result: 0 },
+    { name: 'E. coli', date: '04/06/2021', result: 0 },
+    { name: 'E. coli', date: '18/06/2021', result: 0 },
+    { name: 'E. coli', date: '25/06/2021', result: 0 },
+    { name: 'E. coli', date: '01/07/2021', result: 0 },
+    { name: 'E. coli', date: '08/07/2021', result: 0 },
+    { name: 'E. coli', date: '30/07/2021', result: 0 },
+    { name: 'E. coli', date: '09/08/2021', result: 0 },
+    { name: 'E. coli', date: '25/08/2021', result: 0 },
+    { name: 'E. coli', date: '03/09/2021', result: 0 },
+    { name: 'E. coli', date: '17/09/2021', result: 0 },
+    { name: 'E. coli', date: '24/09/2021', result: 0 },
+    { name: 'E. coli', date: '30/09/2021', result: 0 },
+    { name: 'E. coli', date: '07/10/2021', result: 0 },
+
 ]

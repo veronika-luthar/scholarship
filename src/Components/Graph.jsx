@@ -1,11 +1,11 @@
 import React, { useRef,useState,useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { Scatter } from "react-chartjs-2";
-import {southernMetal, southernChlorine, southernTotalCloroforms, southernEColi} from "../Data/Southern";
-import {mountGrandMetal, mountGrandChlorine, mountGrandTotalCloroforms, mountGrandEColi} from "../Data/MountGrand";
-import {mosgielMetal, mosgielChlorine, mosgielTotalCloroforms, mosgielEColi} from "../Data/Mosgiel";
-import {portChalmersMetal, portChalmersChlorine, portChalmersTotalCloroforms, portChalmersEColi} from "../Data/PortChalmers";
-import {southernMountGrandMetal, southernMountGrandChlorine, southernMountGrandTotalCloroforms, southernMountGrandEColi} from "../Data/Southern-MountGrand";
+import {southernMetal, southernChlorine, southernTotalColiforms, southernEColi} from "../Data/Southern";
+import {mountGrandMetal, mountGrandChlorine, mountGrandTotalColiforms, mountGrandEColi} from "../Data/MountGrand";
+import {mosgielMetal, mosgielChlorine, mosgielTotalColiforms, mosgielEColi} from "../Data/Mosgiel";
+import {portChalmersMetal, portChalmersChlorine, portChalmersTotalColiforms, portChalmersEColi} from "../Data/PortChalmers";
+import {southernMountGrandMetal, southernMountGrandChlorine, southernMountGrandTotalColiforms, southernMountGrandEColi} from "../Data/Southern-MountGrand";
 
 
 const Graph = () => {
@@ -77,8 +77,8 @@ const Graph = () => {
               case "Metal":
                 chartData = dataConversion(mountGrandMetal);
                 break;
-              case "Total Cloroforms":
-                chartData = dataConversion(mountGrandTotalCloroforms);
+              case "Total Coliforms":
+                chartData = dataConversion(mountGrandTotalColiforms);
                 break;
               case "E. Coli":
                 chartData = dataConversion(mountGrandEColi);
@@ -94,8 +94,8 @@ const Graph = () => {
               case "Metal":
                 chartData = dataConversion(southernMetal);
                 break;
-              case "Total Cloroforms":
-                chartData = dataConversion(southernTotalCloroforms);
+              case "Total Coliforms":
+                chartData = dataConversion(southernTotalColiforms);
                 break;
               case "E. Coli":
                 chartData = dataConversion(southernEColi);
@@ -111,8 +111,8 @@ const Graph = () => {
               case "Metal":
                 chartData = dataConversion(southernMountGrandMetal);
                 break;
-              case "Total Cloroforms":
-                chartData = dataConversion(southernMountGrandTotalCloroforms);
+              case "Total Coliforms":
+                chartData = dataConversion(southernMountGrandTotalColiforms);
                 break;
               case "E. Coli":
                 chartData = dataConversion(southernMountGrandEColi);
@@ -128,8 +128,8 @@ const Graph = () => {
               case "Metal":
                 chartData = dataConversion(mosgielMetal);
                 break;
-              case "Total Cloroforms":
-                chartData = dataConversion(mosgielTotalCloroforms);
+              case "Total Coliforms":
+                chartData = dataConversion(mosgielTotalColiforms);
                 break;
               case "E. Coli":
                 chartData = dataConversion(mosgielEColi);
@@ -145,8 +145,8 @@ const Graph = () => {
               case "Metal":
                 chartData = dataConversion(portChalmersMetal);
                 break;
-              case "Total Cloroforms":
-                chartData = dataConversion(portChalmersTotalCloroforms);
+              case "Total Coliforms":
+                chartData = dataConversion(portChalmersTotalColiforms);
                 break;
               case "E. Coli":
                 chartData = dataConversion(portChalmersEColi);
@@ -158,7 +158,7 @@ const Graph = () => {
 
     }
 
-    let results = ["Chlorine", "E. Coli", "Total Cloroforms", "Metal"];
+    let results = ["Chlorine", "E. Coli", "Total Coliforms", "Metal"];
     
     return ( 
     <div className="chart-container" ><h1 className="white-text">I want to check for:</h1>
