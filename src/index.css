@@ -10,8 +10,6 @@
   --phone-hover-link-color: yellow;
 }
 
-
-
 #root {
 	display: table;
 	width: 100%;
@@ -103,7 +101,7 @@ li {
 
 }
 
-a {
+.nav-buttons {
   text-decoration: none;
   border-style: solid;
   background-color: transparent;
@@ -122,14 +120,22 @@ a {
 	width: 100%;
 }
 
+.nav-buttons:hover {
+	background-color: var(--link-color);
+	color: var(--navback-color);
+  transition-duration: 350ms;
+}
+
 a:visited {
 	color: var(--link-color);
 }
 
+a {
+  text-decoration: none;
+}
+
 a:hover {
-	background-color: var(--link-color);
-	color: var(--navback-color);
-  transition-duration: 350ms;
+  color: #254472;
 }
 
 .header {
@@ -193,4 +199,14 @@ a:hover {
   margin-left: 1vw;
   margin-bottom: 1vw;
 
+}
+
+.info-header {
+  color:white;
+}
+
+.info-text {
+  color:#AECBD6;
+  margin-right: 10vw;
+  font-size: 1.2em;
 }
