@@ -12,9 +12,6 @@ const Graph = () => {
 
     const initState = { datasets: [], labels: [] };
     const [stateChart, setStateChart] = useState(initState);
-    const [stateLabels, setStateLabels] = useState(['0','1']);
-
-    const labarr =['03-04-2021', '09-04-2021', '07-05-2021', '11-05-2021', '25-05-2021', '08-06-2021', '16-06-2021', '03-07-2021', '20-07-2021', '06-08-2021', '10-08-2021', '24-08-2021', '07-09-2021', '15-09-2021', '02-10-2021', '25-08-2021', '26-08-2021', '27-08-2021', '28-08-2021', '29-08-2021', '30-08-2021', '01-09-2021', '02-09-2021', '03-09-2021', '04-09-2021', '05-09-2021', '06-09-2021', '08-09-2021', '09-09-2021', '10-09-2021', '11-09-2021', '12-09-2021', '13-09-2021', '03-10-2021', '04-10-2021', '05-10-2021', '06-10-2021'];
 
     let chartData;
     const { pathname } = useLocation();
@@ -56,22 +53,10 @@ const Graph = () => {
       }
   }
     //creates colour based on string hash
-    function stringToColour(str) {
-      let stringHash = 0;
 
-      for(let i = 0; i < str.length; i++){
-        stringHash = str.charCodeAt(i) + ((stringHash << 5) - stringHash);
-      }
+    const stringToColour = require('string-to-color');
 
-      let colour = '#';
-      for(let i = 0; i < 3; i++){
-        let value = (stringHash >> (i * 5)) & 0xFF;
-        colour += ('00' + value.toString(16)).substr(-2);
-      }
-      return colour;
-    }
-
-      function test(e){
+      function reloadChart(e){
         updateChart(e.target.defaultValue);
       }
 
@@ -166,7 +151,6 @@ const Graph = () => {
               break;
           }
           setStateChart(chartData);
-          setStateLabels(chartData.labels);
 
 
     }
@@ -176,7 +160,7 @@ const Graph = () => {
     return ( 
     <div className="chart-container" ><h1 className="white-text">I want to check for:</h1>
       {results.map(function(name, i) {
-          return <label className="radio-text" key={name}><input name="radioGroup" /* defaultChecked={name=="Metal"} */ type="radio" value={name} onClick={test}/>{name}</label>;
+          return <label className="radio-text" key={name}><input name="radioGroup" type="radio" value={name} onClick={reloadChart}/>{name}</label>;
           })}
     <Scatter 
         ref={ref}
@@ -225,7 +209,6 @@ const Graph = () => {
           },
            x: {
             type: "category",
-            labels: [{stateLabels}],
               title: {
                 display: true,
                 text: "Days tested (date)",
@@ -234,8 +217,8 @@ const Graph = () => {
                    size: 20
                }},
                ticks: {
-                 callback: function(value, index, values) {
-                  return index === 0 ? '' : this.getLabelForValue(value);
+                 callback: function(value, index) {
+                  return this.getLabelForValue(value);
                  },
                  color: "rgba(255,255,255,1)"
                }
