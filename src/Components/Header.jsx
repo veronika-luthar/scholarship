@@ -1,37 +1,38 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
 import water from '../images/water.jpg'
 
 const Header = () => {
+    
+    const { pathname } = useLocation();
 
-    const url = window.location.href.split('/').pop();
     let header ="";
 
-    switch(url) {
-        case "MG":
+    switch(pathname) {
+        case "/MG":
             header = "Mount Grand";
             break;
-        case "ST":
+        case "/ST":
             header = "Southern";
             break;
-        case "ML":
+        case "/ML":
             header = "Mosgiel";
             break;
-        case "SMG":
+        case "/SMG":
             header = "Southern/Mount Grand";
             break;
-        case "PC":
+        case "/PC":
             header = "Port Chalmers";
             break;
-        case "alert":
+        case "/alert":
             header = "Alerts";
             break;
-        case "":
-            header = "Zones";
-            break;
-        case "info":
+        case "/info":
             header = "Information";
             break;
+        default: header = "Zones";
     }
+
 
     return (
 

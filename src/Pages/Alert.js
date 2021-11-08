@@ -38,7 +38,6 @@ function areaAlert (area) {
             else {
                 alertText+= "High levels of " + area[i].name + "<br>";
             }
-            console.log(areaName);
             last = areaName;
             }      
         }

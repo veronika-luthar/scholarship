@@ -1,4 +1,5 @@
 import React, { useRef,useState,useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { Scatter } from "react-chartjs-2";
 import {southernMetal, southernChlorine, southernTotalCloroforms, southernEColi} from "../Data/Southern";
 import {mountGrandMetal, mountGrandChlorine, mountGrandTotalCloroforms, mountGrandEColi} from "../Data/MountGrand";
@@ -12,7 +13,7 @@ const Graph = () => {
     const [stateChart, setStateChart] = useState({});
 
     let chartData;
-
+    const { pathname } = useLocation();
     const url = window.location.href.split('/').pop();
     const ref = useRef();
 
@@ -66,9 +67,9 @@ const Graph = () => {
       //updates chart and data
       function updateChart(chartType) {
         
-        switch(url) {
+        switch(pathname) {
 
-          case "MG":
+          case "/MG":
             switch(chartType) {
               case "Chlorine":
                 chartData = dataConversion(mountGrandChlorine);
@@ -85,7 +86,7 @@ const Graph = () => {
               }
               break;
 
-          case "ST":
+          case "/ST":
             switch(chartType) {
               case "Chlorine":
                 chartData = dataConversion(southernChlorine);
@@ -102,7 +103,7 @@ const Graph = () => {
               }
               break;
 
-          case "SMG":
+          case "/SMG":
             switch(chartType) {
               case "Chlorine":
                 chartData = dataConversion(southernMountGrandChlorine);
@@ -119,7 +120,7 @@ const Graph = () => {
             }
               break;
 
-          case "ML":
+          case "/ML":
             switch(chartType) {
               case "Chlorine":
                 chartData = dataConversion(mosgielChlorine);
@@ -136,7 +137,7 @@ const Graph = () => {
             }
               break;
 
-          case "PC":
+          case "/PC":
             switch(chartType) {
               case "Chlorine":
                 chartData = dataConversion(portChalmersChlorine);
