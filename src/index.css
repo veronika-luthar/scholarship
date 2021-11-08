@@ -101,7 +101,7 @@ li {
 
 }
 
-.nav-buttons {
+a {
   text-decoration: none;
   border-style: solid;
   background-color: transparent;
@@ -120,23 +120,35 @@ li {
 	width: 100%;
 }
 
-.nav-buttons:hover {
+a:visited {
+	color: var(--link-color);
+}
+
+a:hover {
 	background-color: var(--link-color);
 	color: var(--navback-color);
   transition-duration: 350ms;
 }
 
-a:visited {
-	color: var(--link-color);
+a.info {
+  border:none;
+  font-size:inherit;
+  height:0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  display: inline;
 }
 
-a {
-  text-decoration: none;
+a.info:visited{
+  color: var(--link-color)
 }
 
-a:hover {
-  color: #254472;
+a.info:hover{
+  background:transparent;
+  color: var(--navback-color);
 }
+
 
 .header {
   position: relative;
@@ -209,4 +221,9 @@ a:hover {
   color:#AECBD6;
   margin-right: 10vw;
   font-size: 1.2em;
+}
+
+.info {
+  margin-top: 1vh;
+  margin-left: 1.2vw;
 }

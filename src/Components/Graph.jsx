@@ -67,7 +67,7 @@ const Graph = () => {
 
           case "/MG":
             switch(chartType) {
-              case "Chlorine":
+              case "Free Available Chlorine":
                 chartData = dataConversion(mountGrandChlorine);
                 break;
               case "Metal":
@@ -84,7 +84,7 @@ const Graph = () => {
 
           case "/ST":
             switch(chartType) {
-              case "Chlorine":
+              case "Free Available Chlorine":
                 chartData = dataConversion(southernChlorine);
                 break;
               case "Metal":
@@ -101,7 +101,7 @@ const Graph = () => {
 
           case "/SMG":
             switch(chartType) {
-              case "Chlorine":
+              case "Free Available Chlorine":
                 chartData = dataConversion(southernMountGrandChlorine);
                 break;
               case "Metal":
@@ -118,7 +118,7 @@ const Graph = () => {
 
           case "/ML":
             switch(chartType) {
-              case "Chlorine":
+              case "Free Available Chlorine":
                 chartData = dataConversion(mosgielChlorine);
                 break;
               case "Metal":
@@ -135,7 +135,7 @@ const Graph = () => {
 
           case "/PC":
             switch(chartType) {
-              case "Chlorine":
+              case "Free Available Chlorine":
                 chartData = dataConversion(portChalmersChlorine);
                 break;
               case "Metal":
@@ -155,7 +155,7 @@ const Graph = () => {
 
     }
 
-    let results = ["Chlorine", "E. Coli", "Total Coliforms", "Metal"];
+    let results = ["Free Available Chlorine", "E. Coli", "Total Coliforms", "Metal"];
     
     return ( 
     <div className="chart-container" ><h1 className="white-text">I want to check for:</h1>
