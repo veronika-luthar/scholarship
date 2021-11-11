@@ -17,12 +17,13 @@ const Graph = () => {
     const { pathname } = useLocation();
     const ref = useRef();
 
+    //sets new data for chart
     useEffect(() => {
       setStateChart(chartData);
       
   }, []);
 
-    // converts data from js files to format needed by chartjs
+    //converts data from js files to format needed by chartjs
     function dataConversion(sourceData) {
       let allresult={};
       let dataset=[];
@@ -39,6 +40,7 @@ const Graph = () => {
           allresult[_name].push({x: _label, y: sourceData[i].result});
       }
 
+      //fills out dataset for each substance and pushes it to a new dataset
       for (const _name in allresult) {
           let _data=allresult[_name];
           let newDataset = {label: _name, data: _data, backgroundColor: stringToColour(_name), pointRadius: 10, pointHoverRadius: 10};
@@ -52,10 +54,11 @@ const Graph = () => {
           datasets: dataset
       }
   }
-    //creates colour based on string hash
 
+    //creates colour based on string
     const stringToColour = require('string-to-color');
 
+      //updates chart
       function reloadChart(e){
         updateChart(e.target.defaultValue);
       }
@@ -63,9 +66,11 @@ const Graph = () => {
       //updates chart and data
       function updateChart(chartType) {
         
+        //switch to determine what zone was clicked on
         switch(pathname) {
-
           case "/MG":
+            
+          //switch to determine what radio button was clicked and what data to show
             switch(chartType) {
               case "Free Available Chlorine":
                 chartData = dataConversion(mountGrandChlorine);
@@ -150,21 +155,21 @@ const Graph = () => {
             }
               break;
           }
+          //sets the new data
           setStateChart(chartData);
-
-
     }
 
+    //radio button options
     let results = ["Free Available Chlorine", "E. Coli", "Total Coliforms", "Metal"];
     
     return ( 
     <div className="chart-container" ><h1 className="white-text">I want to check for:</h1>
+    {/* creates a radio button and label for every item in array*/ }
       {results.map(function(name, i) {
           return <label className="radio-text" key={name}><input name="radioGroup" type="radio" value={name} onClick={reloadChart}/>{name}</label>;
           })}
     <Scatter 
-        ref={ref}
-        
+        ref={ref} 
         data={stateChart}
         options={{
           responsive: true,
@@ -183,12 +188,12 @@ const Graph = () => {
             },
             tooltip: {
               callbacks: {
+                /* renames tooltip to name of substance */
                  label:  function (tooltipItem) {
  
                   let tooltipLabel=tooltipItem.dataset.label;              
                   return tooltipLabel;
                  }
-
               }
             }
          },
@@ -217,6 +222,7 @@ const Graph = () => {
                    size: 20
                }},
                ticks: {
+                 /* sets x axis to show dates */
                  callback: function(value, index) {
                   return this.getLabelForValue(value);
                  },

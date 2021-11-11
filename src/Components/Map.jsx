@@ -6,13 +6,14 @@ import imageMapResize from 'image-map-resizer';
 
     const Map = () => {
 
+        //resizes map when window is resized
         useEffect(() => {
             imageMapResize('[name="image-map"]');
         }, []);
 
         return (
              <div className='map'>
-
+                 
                   <img src= {zoneMap} className='map' usemap="#image-map" style={{ height: '90%', width: 'auto' }}></img>
                         <map name="image-map" >
                             <area target="" alt="Mt Grand" title="Mt Grand" href="MG" coords="360,114,336,134,311,149,285,151,271,157,269,172,276,186,267,196,254,211,265,228,285,229,299,236,290,258,295,268,284,292,287,303,301,314,306,323,290,331,294,341,317,368,344,361,336,340,338,322,336,312,331,305,325,295,325,282,336,280,352,271,360,251,366,232,371,219,382,205,389,186,385,173,375,163,380,157,390,165,401,173,415,184,433,182,436,195,444,210,454,219,471,214,503,205,532,180,543,145,545,123,486,114,426,110,404,110" shape="poly"></area>

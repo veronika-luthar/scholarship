@@ -4,12 +4,15 @@ import water from '../images/water.jpg'
 
 const Header = () => {
     
+    //gets end of url
     const { pathname } = useLocation();
 
     let header ="";
 
+    //switch case to determine what page the user is on
     switch(pathname) {
         case "/MG":
+            //sets header to full page title
             header = "Mount Grand";
             break;
         case "/ST":

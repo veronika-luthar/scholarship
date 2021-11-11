@@ -8,6 +8,7 @@ const Navbar = () => {
         <nav>
             <div className='container'>
             <h1 className='logo-text'>Water-Supply Testing Results Dunedin</h1>
+            {/* Links to pages */}
             <ul>
                 <li className="nav-buttons">
                     <Link to='/'>Home</Link>
