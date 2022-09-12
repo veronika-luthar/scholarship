@@ -3,7 +3,7 @@ This is my NCEA Digital Technology Scholarship Project.
 
 Process and write-up: https://drive.google.com/file/d/1Q_dC1Y5Sa0BoYXaWoB10xePMtzg0iIEh/view?usp=sharing
 
-The project: veronika.luthar.nz/scholarship
+The project: https://veronika.luthar.nz/scholarship
 
 # Getting Started with Create React App
 
